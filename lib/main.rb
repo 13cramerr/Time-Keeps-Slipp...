@@ -3,6 +3,7 @@ require_relative 'stopwatch'
 require_relative 'pair_timer'
 require 'byebug'
 def get_choice
+    system("clear")
     puts "Hello, please pick the one you would like to use: "
     puts "1) Timer"
     puts "2) Pair Timer (for a/A)"
@@ -47,19 +48,27 @@ end
 def run_pair_timer
     choice = ''
 
+    print "Enter navigator's name: "
+    p1 = gets.chomp
+
+    print "Enter driver's name: "
+    p2 = gets.chomp
+
+
     until choice == 'Y' || choice == 'N'
         puts "Would you like to enter a custom message telling you when to switch? (y/n):"
         choice = gets.chomp.upcase
     end
 
+
     case choice
     when 'Y'
         print "Enter your message: "
         msg = gets.chomp
-        pt = Timer.new(msg)
+        pt = PairTimer.new(p1, p2, msg)
         pt.run
     when 'N'
-        pt = Timer.new
+        pt = PairTimer.new(p1, p2, msg)
         pt.run
     end
 end
