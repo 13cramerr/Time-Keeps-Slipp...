@@ -1,7 +1,7 @@
 Before using please run:
     "$ sudo dpkg --configure -a"
 and then run: 
-    "$ sudo apt isntall gnustep-gui-runtime"
+    "$ sudo apt install gnustep-gui-runtime"
 this will allow your computer to talk to you! (:
 
 Hello! To use the timer:
